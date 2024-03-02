@@ -8,7 +8,7 @@ site_details = {
     'pageurl': 'https://foreternia.com/wp-login.php'  # The URL where the reCAPTCHA is located
 }
 
-api_key = '4f4796c7c4782b0d8954500818c7d58e'  # Your 2Captcha API key
+api_key = '4f4796c7c4782b0d8954dfghh500818c7d58e'  # Your 2Captcha API key
 
 async def login():
     browser = await launch(headless=False, slowMo=10, args=['--no-sandbox', '--disable-setuid-sandbox'])
@@ -17,10 +17,10 @@ async def login():
     await page.goto(site_details['pageurl'], {'waitUntil': 'networkidle2'})
 
     # Mimic human typing for login credentials
-    await page.type('input#user_login', 'idankupeer@gmail.com', options={'delay': 100})
-    await page.type('input#user_pass', 'b^OnstnOvsWI', options={'delay': 100})
+    await page.type('input#user_login', 'shahz@gmail.com', options={'delay': 100})
+    await page.type('input#user_pass', 'testing_place_holder', options={'delay': 100})
 
-    # Initiate captcha solving request
+    # Initiate captcha-solving request
     requestId = initiate_captcha_request(api_key)
     response = await poll_for_request_results(api_key, requestId)
 
